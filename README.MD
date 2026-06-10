@@ -1,5 +1,5 @@
 ## ⚙️ Api10-Functions-Azure
-Exemplo de criação de API com Functions Azure em C# .NET Core 10.
+Exemplo de criação de API com Functions Azure em C# .NET Core 10 com banco de dados SQL-Server.
 
 O que voçê vai ver nesse Projeto
 
