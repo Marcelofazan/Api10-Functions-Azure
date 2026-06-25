@@ -8,6 +8,9 @@ Exemplo de requisições API com Triggers Azure Functions em C# .NET Core 10 com
 | Azure Functions | Arquitetura serverless, com uso de gatilhos de API (HTTP Triggers) |
 | Computação em Nuvem | Infraestrutura global de data centers para hospedar, gerenciar e escalar aplicativos e dados pela internet |
 
+#### 💬 Requisitos do Projeto
+- Realizar Migrations EntityFramework .NET
+  
 #### ⚠️ String de conexão do banco
 Modifique a string de conexão no arquivo local.settings.json se caso necessário, no trecho indicado:
 ```bash 
