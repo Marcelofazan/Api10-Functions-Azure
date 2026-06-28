@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -10,12 +5,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: dotnet restore
+# 1. Restaura todas as dependências do NuGet e do Entity Framework
+- task: DotNetCoreCLI@2
   displayName: 'Recuperar os pacotes'
-
-- script: dotnet build
-  displayName: 'Buildando o projeto'
-
-- task: FuncToolsInstaller@0
   inputs:
-    version: 'latest'
+    command: 'restore'
+    projects: '**/*.csproj'
+
+# 2. Compila todo o projeto para validar se existem erros de sintaxe ou de código
+- task: DotNetCoreCLI@2
+  displayName: 'Buildando o projeto'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration Release'
